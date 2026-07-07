@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Isca Turbo by Species - Stop Guessing Your Bait</title>
+  <meta name="description" content="A complete species-by-species bait guide for anglers who are tired of wasting casts with the wrong bait.">
+  <style>
+    :root {
+      --bg: #02090d;
+      --panel: #061923;
+      --panel-2: #0a2630;
+      --ink: #f3efe3;
+      --muted: #b9c5be;
+      --green: #9bd21f;
+      --green-dark: #5f8f18;
+      --yellow: #ffc21a;
+      --line: rgba(155, 210, 31, .44);
+      --shadow: rgba(0, 0, 0, .5);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--ink);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 0, rgba(0, 148, 169, .22), transparent 28rem),
+        radial-gradient(circle at 50% 100%, rgba(155, 210, 31, .08), transparent 26rem),
+        var(--bg);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+      overflow: hidden;
+      background: #020b10;
+      box-shadow: 0 0 48px rgba(0, 0, 0, .65);
+      padding-bottom: 94px;
+    }
+
+    .image-section {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      border: 0;
+      background: #061923;
+    }
+
+    .bridge {
+      position: relative;
+      padding: 34px 22px;
+      background:
+        linear-gradient(180deg, rgba(3, 18, 25, .96), rgba(4, 29, 37, .98)),
+        radial-gradient(circle at 80% 0, rgba(155, 210, 31, .2), transparent 18rem);
+      border-top: 1px solid rgba(155, 210, 31, .2);
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .bridge.tight {
+      padding-top: 26px;
+      padding-bottom: 28px;
+    }
+
+    .eyeline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: var(--yellow);
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: 16px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+
+    .eyeline::before {
+      content: "";
+      width: 36px;
+      height: 4px;
+      background: var(--yellow);
+      box-shadow: 0 0 18px rgba(255, 194, 26, .5);
+    }
+
+    h1, h2, h3, p {
+      margin: 0;
+    }
+
+    .bridge h2,
+    .offer h2 {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: clamp(42px, 13vw, 58px);
+      line-height: .92;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      color: var(--ink);
+      text-shadow: 0 8px 18px rgba(0, 0, 0, .42);
+    }
+
+    .bridge h2 strong,
+    .offer h2 strong {
+      color: var(--green);
+      font-weight: inherit;
+    }
+
+    .lead {
+      margin-top: 16px;
+      font-size: 19px;
+      line-height: 1.34;
+      font-weight: 800;
+      color: var(--ink);
+      text-shadow: 0 3px 12px rgba(0, 0, 0, .38);
+    }
+
+    .lead strong {
+      color: var(--green);
+    }
+
+    .micro {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .pain-list,
+    .value-list,
+    .faq-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .pain-item,
+    .value-item,
+    .faq-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border: 1px solid rgba(155, 210, 31, .28);
+      background: linear-gradient(180deg, rgba(7, 35, 45, .84), rgba(2, 12, 18, .88));
+      box-shadow: inset 0 0 28px rgba(0, 153, 176, .07), 0 12px 24px rgba(0, 0, 0, .22);
+      border-radius: 8px;
+    }
+
+    .mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      color: var(--green);
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .mark.warn {
+      color: var(--yellow);
+    }
+
+    .pain-item h3,
+    .value-item h3,
+    .faq-item h3 {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: 24px;
+      line-height: 1;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .pain-item p,
+    .value-item p,
+    .faq-item p {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .cta-row {
+      display: grid;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .button {
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #ffd84a, #f2b10e);
+      color: #06131a;
+      text-decoration: none;
+      text-align: center;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: 28px;
+      line-height: 1;
+      text-transform: uppercase;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, .36), inset 0 2px 0 rgba(255, 255, 255, .46);
+    }
+
+    .button.secondary {
+      min-height: 50px;
+      border: 1px solid var(--line);
+      background: rgba(7, 35, 45, .8);
+      color: var(--green);
+      font-size: 22px;
+      box-shadow: none;
+    }
+
+    .subproof {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+
+    .split-proof {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .stat {
+      min-height: 96px;
+      padding: 12px 8px;
+      border: 1px solid rgba(155, 210, 31, .28);
+      border-radius: 8px;
+      background: rgba(0, 0, 0, .24);
+      text-align: center;
+    }
+
+    .stat b {
+      display: block;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: 34px;
+      line-height: 1;
+      color: var(--green);
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.15;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .species-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .species-grid span {
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      padding: 9px 10px;
+      border-left: 4px solid var(--green);
+      border-radius: 4px;
+      background: rgba(243, 239, 227, .1);
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .offer {
+      padding: 36px 22px 34px;
+      background:
+        linear-gradient(180deg, rgba(2, 10, 14, .72), rgba(2, 10, 14, .94)),
+        radial-gradient(circle at 50% 8%, rgba(0, 154, 176, .35), transparent 18rem),
+        radial-gradient(circle at 25% 100%, rgba(155, 210, 31, .15), transparent 16rem),
+        #04131a;
+      border-top: 2px solid rgba(155, 210, 31, .4);
+    }
+
+    .offer-card {
+      margin-top: 22px;
+      padding: 18px;
+      border: 1px solid rgba(255, 194, 26, .52);
+      border-radius: 8px;
+      background: linear-gradient(180deg, rgba(8, 38, 48, .92), rgba(3, 16, 22, .94));
+      box-shadow: inset 0 0 36px rgba(255, 194, 26, .06), 0 18px 32px rgba(0, 0, 0, .35);
+    }
+
+    .offer-card h3 {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      color: var(--yellow);
+      font-size: 30px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .included {
+      display: grid;
+      gap: 9px;
+      margin-top: 16px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .included li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 9px;
+      align-items: start;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.32;
+      font-weight: 800;
+    }
+
+    .included li::before {
+      content: "✓";
+      display: grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #06131a;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .sticky-cta {
+      position: fixed;
+      left: 50%;
+      bottom: max(12px, env(safe-area-inset-bottom));
+      z-index: 30;
+      width: min(392px, calc(100vw - 24px));
+      min-height: 64px;
+      display: grid;
+      place-items: center;
+      transform: translateX(-50%);
+      border-radius: 8px;
+      background: linear-gradient(180deg, #ffd84a, #f1ad0c);
+      color: #06131a;
+      text-decoration: none;
+      text-align: center;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: 28px;
+      line-height: 1;
+      text-transform: uppercase;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .5), inset 0 2px 0 rgba(255, 255, 255, .42);
+      transition: transform .22s ease, opacity .22s ease;
+    }
+
+    .sticky-cta.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(-50%) translateY(110%);
+    }
+
+    .sticky-cta small {
+      display: block;
+      margin-top: 3px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: .06em;
+    }
+
+    .footer-note {
+      padding: 22px 22px 28px;
+      color: rgba(243, 239, 227, .62);
+      background: #02090d;
+      font-size: 11px;
+      line-height: 1.45;
+      font-weight: 700;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <img class="image-section" src="/assets/01-stop-generic-bait.png" alt="Stop using generic bait. Every species reacts to different bait signals.">
+
+    <section class="bridge">
+      <div class="eyeline">The Pain Most Anglers Ignore</div>
+      <h2>You may not be a bad angler. <strong>Your bait may be sending the wrong signal.</strong></h2>
+      <p class="lead">Most slow days do not start with the cast. They start with the bait choice: wrong scent, wrong texture, wrong size, wrong moment.</p>
+      <div class="pain-list">
+        <div class="pain-item">
+          <div class="mark warn">!</div>
+          <div>
+            <h3>Fish Follow Signals</h3>
+            <p>If the bait does not match how that species feeds, the fish can ignore it even when you are in the right spot.</p>
+          </div>
+        </div>
+        <div class="pain-item">
+          <div class="mark warn">!</div>
+          <div>
+            <h3>Generic Bait Costs Time</h3>
+            <p>One-size-fits-all bait forces you into trial and error while the bite window gets smaller.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a class="button" href="#checkout">Get The Guide Now</a>
+        <p class="subproof">Digital guide for species-specific bait decisions</p>
+      </div>
+    </section>
+
+    <img class="image-section" src="/assets/02-less-guessing.png" alt="Less guessing, more bites. Replace trial and error with species logic.">
+    <img class="image-section" src="/assets/03-secret-system.png" alt="The secret is species plus water plus timing. Base, scent, texture and release.">
+
+    <section class="bridge tight">
+      <div class="eyeline">What Changes</div>
+      <h2>Stop choosing bait by habit. <strong>Choose it by the fish.</strong></h2>
+      <p class="lead">Isca Turbo gives you a repeatable decision system before you mix, rig or cast.</p>
+      <div class="split-proof">
+        <div class="stat"><b>60</b><span>Target species</span></div>
+        <div class="stat"><b>60</b><span>Homemade bait recipes</span></div>
+        <div class="stat"><b>1</b><span>Clear field system</span></div>
+      </div>
+    </section>
+
+    <img class="image-section" src="/assets/04-read-species.png" alt="Read the species before you mix. Analyze scent, size, texture and release.">
+    <img class="image-section" src="/assets/05-base-works.png" alt="Build a base that works every time. Standardize the base and adjust what matters.">
+    <img class="image-section" src="/assets/06-adjust-water.png" alt="Adjust the recipe to the water. Tune weight, color and speed.">
+
+    <section class="bridge">
+      <div class="eyeline">Inside The Guide</div>
+      <h2>Before the next trip, know exactly <strong>what bait profile to build.</strong></h2>
+      <p class="lead">Each species page gives you the fish behavior, the bait recipe, the rig, the presentation and the mistake to avoid.</p>
+      <div class="value-list">
+        <div class="value-item">
+          <div class="mark">1</div>
+          <div>
+            <h3>Read The Species</h3>
+            <p>Understand what the fish eats, where it holds and which bait signals matter most.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="mark">2</div>
+          <div>
+            <h3>Build The Bait</h3>
+            <p>Use clear homemade bait recipes with ingredients, steps and practical field notes.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="mark">3</div>
+          <div>
+            <h3>Fish It Correctly</h3>
+            <p>Match rig, presentation and water conditions so the bait works the way it was meant to.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bridge tight">
+      <div class="eyeline">Species Covered</div>
+      <h2>Freshwater, inshore and nearshore species. <strong>One guide in your phone.</strong></h2>
+      <div class="species-grid" aria-label="Example species covered">
+        <span>Largemouth Bass</span>
+        <span>Smallmouth Bass</span>
+        <span>Walleye</span>
+        <span>Channel Catfish</span>
+        <span>Rainbow Trout</span>
+        <span>Steelhead</span>
+        <span>Common Carp</span>
+        <span>Redfish</span>
+        <span>Spotted Seatrout</span>
+        <span>Tarpon</span>
+      </div>
+      <p class="micro">Includes 60 species across the United States and Canada, with recipes and presentation notes built around how each fish actually feeds.</p>
+    </section>
+
+    <section class="offer" id="checkout">
+      <div class="eyeline">Get Instant Access</div>
+      <h2>Stop wasting casts with bait that was never built for the fish in front of you.</h2>
+      <p class="lead"><strong>Isca Turbo by Species</strong> is your bait decision guide: open it before the trip, pick the species, build the bait, adjust to the water.</p>
+      <div class="offer-card">
+        <h3>What You Get</h3>
+        <ul class="included">
+          <li>The complete digital bait guide for 60 target species</li>
+          <li>Homemade bait recipes with step-by-step instructions</li>
+          <li>Species profiles, feeding behavior and best conditions</li>
+          <li>Rig and presentation notes for each fish</li>
+          <li>Pro tips and common mistakes to avoid</li>
+        </ul>
+      </div>
+      <div class="cta-row">
+        <a class="button" href="#checkout">Get Isca Turbo Now</a>
+        <a class="button secondary" href="#top">Review The Method Again</a>
+        <p class="subproof">Replace guessing with species logic before your next cast</p>
+      </div>
+    </section>
+
+    <section class="bridge tight">
+      <div class="eyeline">Quick Answers</div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="mark">?</div>
+          <div>
+            <h3>Is this only for beginners?</h3>
+            <p>No. It is for any angler who wants a clearer bait decision instead of guessing from memory.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="mark">?</div>
+          <div>
+            <h3>Is it only freshwater?</h3>
+            <p>No. The guide covers freshwater, inshore saltwater, nearshore and pelagic species.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="mark">?</div>
+          <div>
+            <h3>What is the big promise?</h3>
+            <p>Less random bait choice. More structured decisions based on species, water and timing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">Always follow local fishing regulations, seasons, bait restrictions, size limits and bag limits. Fish ethically and never move live fish or bait between waterways.</p>
+  </main>
+
+  <a class="sticky-cta" href="#checkout" aria-label="Get Isca Turbo by Species now">
+    Get The Guide Now
+    <small>Instant digital access</small>
+  </a>
+  <script>
+    const stickyCta = document.querySelector(".sticky-cta");
+    const checkout = document.querySelector("#checkout");
+
+    if (stickyCta && checkout && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        const isOfferVisible = entries.some((entry) => entry.isIntersecting);
+        stickyCta.classList.toggle("is-hidden", isOfferVisible);
+      }, { rootMargin: "-20% 0px -30% 0px", threshold: 0 });
+
+      observer.observe(checkout);
+    }
+  </script>
+</body>
+</html>
